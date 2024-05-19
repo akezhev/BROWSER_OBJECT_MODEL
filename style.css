@@ -1,0 +1,169 @@
+/* Задание 1
+Создать html-страницу с трекбаром.
+Предоставить пользователю возможность изменять положение
+синего указателя. */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.exercise_1 {
+  width: 100vw;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: none;
+  background: #585858;
+}
+.trackbar {
+  position: relative;
+  display: block;
+  width: 300px;
+  height: 40px;
+  background: transparent;
+}
+.trackbar .track-line,
+.trackbar .track-selector {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 6px;
+  top: calc((40px - 6px) / 2);
+  left: 0;
+  border-radius: 2px;
+  background: #ddd;
+}
+.trackbar .track-selector {
+  width: 0;
+  z-index: 2;
+  background: #52e052;
+}
+.trackbar .track-button {
+  --next-bg-color: hsl(0, 60%, 50%);
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 40px;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  background: var(--next-bg-color);
+  z-index: 4;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.trackbar .track-percentage {
+  position: absolute;
+  top: -25px;
+  font-weight: 600;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+
+/* Задание 2
+Создать html-страницу с галереей.
+В один момент времени на экране отображается одно изображение и две кнопки: Назад и Вперед. При нажатии на кнопки
+изображения должны переключатся в указанном порядке. Когда
+следующего/предыдущего изображения нет, то соответствующую
+кнопку необходимо блокировать. Изображения хранить в заранее
+подготовленном массиве. */
+.exercise_2 {
+  width: 100vw;
+  height: auto;
+  background-color: #ddd;
+}
+.gallery {
+  margin: 0 auto;
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+.gallery a img {
+  height: 50px;
+}
+
+/* Задание 3
+Создать html-страницу с блоками информации, которые открываются по щелчку на заголовок. В один момент времени может
+быть развернут только один блок информации. */
+.exercise_3 {
+  width: 100vw;
+  height: auto;
+}
+.container {
+  display: block;
+  margin: 0 auto;
+  padding: 15px;
+  max-width: 800px;
+  height: auto;
+  border: 2px solid #000;
+  background-color: #fbf2e9;
+}
+.container h4 {
+  margin: 0;
+  padding: 3px;
+  color: #fff;
+  background-color: #518cbb;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: help;
+}
+.block {
+  display: none;
+  padding: 5px;
+  font-size: 16px;
+  border: 2px solid #000;
+}
+.block.active {
+  display: block;
+}
+
+/* Задание 4
+Создать html-страницу с новостями.
+Необходимо отлавливать, когда скролл доходит до конца страницы, и догружать еще новости в список. Новости для подгрузки
+хранить в заранее подготовленном массиве.
+Облегченный вариант: вместо отлова, когда скролл дойдет до
+конца страницы, используйте кнопку в конце списка новостей. */
+.exercise_4 {
+  width: 100vw;
+  margin: 0 auto;
+  height: auto;
+  background-color: #fbf2e9;
+}
+.box {
+  margin: 20px auto;
+  width: 800px;
+  max-height: 300px;
+}
+.news {
+  margin: 5px;
+  padding: 5px;
+  height: 100%;
+}
+.content {
+  display: none;
+}
+
+.loader {
+  border: 8px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 8px solid #3498db;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+  display: none;
+  margin: auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
