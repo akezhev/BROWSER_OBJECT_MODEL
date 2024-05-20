@@ -144,18 +144,6 @@ function toggleBlock(index) {
 // хранить в заранее подготовленном массиве.
 // Облегченный вариант: вместо отлова, когда скролл дойдет до
 // конца страницы, используйте кнопку в конце списка новостей.
-let news = [
-  "Новость 1",
-  "Новость 2",
-  "Новость 3",
-  "Новость 4",
-  "Новость 5",
-  "Новость 6",
-  "Новость 7",
-  "Новость 8",
-  "Новость 9",
-  "Новость 10",
-];
 
 let newsContainer = document.getElementById("newsContainer");
 let loader = document.getElementById("loader");
@@ -165,7 +153,7 @@ function loadMoreNews() {
   loader.style.display = "block";
 
   setTimeout(function () {
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 1; i++) {
       if (oneIndex < news.length) {
         let newsElement = document.createElement("div");
         newsElement.className = "news";
@@ -175,7 +163,16 @@ function loadMoreNews() {
       }
     }
     loader.style.display = "none";
-  }, 2000);
+  }, 3000);
+  let news = [
+    `Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio facer
+    vitae voluptates corrupti quo, doloribus provident repellendus sapiente odio
+    quam aliquam itaque! Voluptatem consectetur quas veritatis rerum atque ex
+    nobis? Lorem ipsum dolor sit, amet consectetur adipisicing elit
+    Exercitationem hic, cum, iure eligendi voluptatem laudantium dolores soluta
+    sint tenetur aliquam, consectetur numquam quaerat reru. Voluptate possimus
+    quisquam eius ducimus inventore lorem m quis ducimus fugit dignissimos illo atque temporibus quod ipsa totam eaque, enim similique obcaecati veniam ratione. Soluta amet optio laudantium id!`,
+  ];
 }
 
 window.addEventListener("scroll", function () {
@@ -185,3 +182,31 @@ window.addEventListener("scroll", function () {
 });
 
 loadMoreNews();
+
+// Задание 5
+// Создать html-страницу, на которой пользователь может ввести номер месяца, год, и получить календарь на указанный месяц.
+// Календарь можно генерировать с помощью таблицы. Начальный
+// день недели всегда должен быть понедельник.
+------------------------------------------------
+// Задание 6
+// Создать html-страницу со списком ссылок.
+// Ссылки на внешние источники (которые начинаются с http://)
+// необходимо подчеркнуть пунктиром.
+// Искать такие ссылки в списке и устанавливать им дополнительные стили необходимо с помощью JS.
+let linkList = document.getElementById("link-list");
+let links = linkList.getElementsByTagName("a");
+
+for (let i = 0; i < links.length; i++) {
+  let link = links[i];
+  if (link.href.startsWith("https://")) {
+    link.classList.add("external-link");
+  }
+}
+
+// Задание 7
+// Создать html-страницу со списком книг.
+// При щелчке на элемент, цвет текста должен меняться на оранжевый. При повторном щелчке на другую книгу, предыдущей - необходимо возвращать прежний цвет.
+// Если при клике мышкой была зажата клавиша Ctrl, то элемент
+// добавляется/удаляется из выделенных. Если при клике мышкой
+// была зажата клавиша Shift, то к выделению добавляются все
+// элементы в промежутке от предыдущего кликнутого до текущего.
