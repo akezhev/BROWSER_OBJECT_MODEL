@@ -198,7 +198,7 @@ let links = linkList.getElementsByTagName("a");
 
 for (let i = 0; i < links.length; i++) {
   let link = links[i];
-  if (link.href.startsWith("https://")) {
+  if (link.href.startsWith("http://")) {
     link.classList.add("external-link");
   }
 }
