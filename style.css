@@ -130,40 +130,87 @@ body {
 конца страницы, используйте кнопку в конце списка новостей. */
 .exercise_4 {
   width: 100vw;
-  margin: 0 auto;
   height: auto;
-  background-color: #fbf2e9;
+  background-color: #ddd;
+}
+.wrap {
+  margin: 0 auto;
+  padding: 0 10px;
+  width: 800px;
+  height: 200px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  border: 10px solid #fbf2e9;
+  background-color: #fff;
+  overflow: scroll;
+}
+.wrap h4 {
+  margin: 0;
+  padding: 5px 0;
+}
+.wrap p {
+  margin: 5px 0;
+  padding: 0;
+  font-size: 16px;
+}
+.loading-icon {
+  background: url(img/loading1.gif) center / 30px no-repeat;
+  margin: 0 auto;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+/* Задание 5
+Создать html-страницу, на которой пользователь может ввести номер месяца, год, и получить календарь на указанный месяц.
+Календарь можно генерировать с помощью таблицы. Начальный
+день недели всегда должен быть понедельник. */
+.exercise_5 {
+  width: 100vw;
+  height: auto;
+  background-color: #fff;
+}
+--------------------------------------------------------------------
+/* Задание 6
+Создать html-страницу со списком ссылок.
+Ссылки на внешние источники (которые начинаются с http://)
+необходимо подчеркнуть пунктиром.
+Искать такие ссылки в списке и устанавливать им дополнительные стили необходимо с помощью JS. */
+.exercise_6 {
+  width: 100vw;
+  height: auto;
+  background-color: #ddd;
 }
 .box {
+  padding: 15px;
   margin: 20px auto;
-  width: 800px;
-  max-height: 300px;
+  width: 500px;
+  height: auto;
+  background-color: #fbf2e9;
+  border: 3px dashed #525659;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
-.news {
-  margin: 5px;
-  padding: 5px;
-  height: 100%;
+.box ul li {
+  line-height: 1.5rem;
+  list-style: circle;
 }
-.content {
-  display: none;
+.box ul li a {
+  text-decoration: none;
 }
-
-.loader {
-  border: 8px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 8px solid #3498db;
-  width: 50px;
-  height: 50px;
-  animation: spin 2s linear infinite;
-  display: none;
-  margin: auto;
+.external-link {
+  border-bottom: 1px dashed;
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+/* Задание 7
+Создать html-страницу со списком книг.
+При щелчке на элемент, цвет текста должен меняться на оранжевый. При повторном щелчке на другую книгу, предыдущей - необходимо возвращать прежний цвет.
+Если при клике мышкой была зажата клавиша Ctrl, то элемент
+добавляется/удаляется из выделенных. Если при клике мышкой
+была зажата клавиша Shift, то к выделению добавляются все
+элементы в промежутке от предыдущего кликнутого до текущего. */
+.exercise_7 {
+  width: 100vw;
+  height: auto;
+  background-color: #fff;
 }
