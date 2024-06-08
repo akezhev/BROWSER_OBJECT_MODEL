@@ -91,6 +91,7 @@ body {
 Создать html-страницу с блоками информации, которые открываются по щелчку на заголовок. В один момент времени может
 быть развернут только один блок информации. */
 .exercise_3 {
+  margin: 20px auto;
   width: 100vw;
   height: auto;
 }
@@ -109,7 +110,8 @@ body {
   color: #fff;
   background-color: #518cbb;
   font-weight: 500;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   cursor: help;
 }
 .block {
@@ -136,7 +138,7 @@ body {
 .wrap {
   margin: 0 auto;
   padding: 0 10px;
-  width: 800px;
+  max-width: 800px;
   height: 200px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -166,6 +168,7 @@ body {
 Календарь можно генерировать с помощью таблицы. Начальный
 день недели всегда должен быть понедельник. */
 .exercise_5 {
+  padding: 20px;
   width: 100vw;
   height: auto;
   background-color: #fff;
@@ -184,7 +187,7 @@ body {
 .box {
   padding: 15px;
   margin: 20px auto;
-  width: 500px;
+  max-width: 500px;
   height: auto;
   background-color: #fbf2e9;
   border: 3px dashed #525659;
@@ -210,7 +213,56 @@ body {
 была зажата клавиша Shift, то к выделению добавляются все
 элементы в промежутке от предыдущего кликнутого до текущего. */
 .exercise_7 {
-  width: 100vw;
   height: auto;
   background-color: #fff;
+  margin: 20px auto;
+  max-width: 900px;
+  font-size: 14px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.table_7 {
+  margin-left: 35px;
+}
+.selected {
+  background-color: coral;
+  color: white;
+}
+
+/* Задание 8
+Создать html-страницу для отображения/редактирования текста.
+При открытии страницы текст отображается с помощью тега
+div. При нажатии Ctrl+E, вместо div появляется textarea с тем
+же текстом, который теперь можно редактировать. При нажатии
+Ctrl+S, вместо textarea появляет div с уже измененным текстом.
+Не забудьте выключить поведение по умолчанию для этих сочетаний клавиш. */
+.exercise_8 {
+  width: 100vw;
+  height: auto;
+  background-color: #ddd;
+}
+
+/* Задание 9
+Создать html-страницу с большой таблицей.
+При клике по заголовку колонки, необходимо отсортировать
+данные по этой колонке. Например: на скриншоте люди отсортированы по возрасту. Учтите, что числовые значения должны
+сортироваться как числа, а не как строки. */
+.exercise_9 {
+  height: auto;
+  background-color: #fff;
+  margin: 20px auto;
+  width: 900px;
+  font-size: 22px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.container_table {
+  margin: 30px auto;
+  max-width: 530px;
+}
+.table_9 {
+  padding: 5px 20px;
+  border: 1px solid black;
+  border-collapse: collapse;
+  cursor: pointer;
 }
