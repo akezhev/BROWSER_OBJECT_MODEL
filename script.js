@@ -210,3 +210,107 @@ for (let i = 0; i < links.length; i++) {
 // добавляется/удаляется из выделенных. Если при клике мышкой
 // была зажата клавиша Shift, то к выделению добавляются все
 // элементы в промежутке от предыдущего кликнутого до текущего.
+let rows = document.querySelectorAll("tr");
+rows.forEach((element) => {
+  element.onmousedown = paint;
+});
+
+let lastRow;
+
+function paint() {
+  if (event.shiftKey) {
+    if (lastRow.rowIndex < this.rowIndex) {
+      for (let i = lastRow.rowIndex; i <= this.rowIndex; i++) {
+        rows[i].classList.add("selected");
+      }
+    } else {
+      for (let i = lastRow.rowIndex; i >= this.rowIndex; i--) {
+        rows[i].classList.add("selected");
+      }
+    }
+    return;
+  }
+  if (event.ctrlKey) {
+    if (this.classList.contains("selected")) {
+      this.classList.remove("selected");
+      return;
+    } else {
+      this.classList.add("selected");
+      return;
+    }
+  }
+
+  document.querySelectorAll(".selected").forEach((elem) => {
+    elem.classList.remove("selected");
+  });
+  if (!this.classList.contains("selected")) {
+    this.classList.add("selected");
+  }
+  if (this.classList.contains("selected")) {
+    lastRow = this;
+    return;
+  }
+}
+
+// Задание 8
+// Создать html-страницу для отображения/редактирования текста.
+// При открытии страницы текст отображается с помощью тега
+// div. При нажатии Ctrl+E, вместо div появляется textarea с тем
+// же текстом, который теперь можно редактировать. При нажатии
+// Ctrl+S, вместо textarea появляет div с уже измененным текстом.
+// Не забудьте выключить поведение по умолчанию для этих сочетаний клавиш.
+area.hidden = true;
+
+document.onkeydown = function (e) {
+  if (e.ctrlKey && e.keyCode == "69") {
+    view.hidden = true;
+    area.hidden = false;
+    area.focus();
+    area.innerHTML = view.innerHTML;
+    return false;
+  }
+
+  if (e.ctrlKey && e.keyCode == "83") {
+    view.hidden = false;
+    area.hidden = true;
+    //alert(area.value);
+    view.innerHTML = area.value;
+    return false;
+  } else if (e.keyCode == "27") {
+    view.hidden = false;
+    area.hidden = true;
+  }
+};
+
+// Задание 9
+// Создать html-страницу с большой таблицей.
+// При клике по заголовку колонки, необходимо отсортировать
+// данные по этой колонке. Например: на скриншоте люди отсортированы по возрасту. Учтите, что числовые значения должны
+// сортироваться как числа, а не как строки.
+table.onclick = function (e) {
+  if (e.target.tagName != "TH") return;
+  let th = e.target;
+  sortTable(th.cellIndex, th.dataset.type);
+};
+
+function sortTable(colNum, type) {
+  let tbody = table.querySelector("tbody");
+  let rowsArray = Array.from(tbody.rows);
+  let compare;
+  switch (type) {
+    case "number":
+      compare = function (rowA, rowB) {
+        return rowA.cells[colNum].innerHTML - rowB.cells[colNum].innerHTML;
+      };
+      break;
+    case "string":
+      compare = function (rowA, rowB) {
+        return rowA.cells[colNum].innerHTML > rowB.cells[colNum].innerHTML
+          ? 1
+          : -1;
+      };
+      break;
+  }
+  rowsArray.sort(compare);
+  tbody.append(...rowsArray);
+}
