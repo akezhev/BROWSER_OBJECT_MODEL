@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./dist/main.css">
   </head>
   <body>
     <!-- Задание 1
@@ -97,7 +98,7 @@
 Календарь можно генерировать с помощью таблицы. Начальный
 день недели всегда должен быть понедельник. -->
     <section class="exercise_5">
-
+      <div id="root"></div>
     </section>
 
     <!-- Задание 6
@@ -117,6 +118,7 @@
         </ul>
       </div>
     </section>
+
     <!-- Задание 7
 Создать html-страницу со списком книг.
 При щелчке на элемент, цвет текста должен меняться на оранжевый. При повторном щелчке на другую книгу, предыдущей - необходимо возвращать прежний цвет.
@@ -124,10 +126,100 @@
 добавляется/удаляется из выделенных. Если при клике мышкой
 была зажата клавиша Shift, то к выделению добавляются все
 элементы в промежутке от предыдущего кликнутого до текущего. -->
-      <section class="exercise_7">
+    <section class="exercise_7">
+      <table class="table_7">
+        <tbody>
+          <tr>
+            <td>1."JavaScript for Kids: 
+                  A Playful Introduction to Programming" by Nick Morgan</td>
+          </tr>
+          <tr>
+            <td>2. "Eloquent JavaScript: 
+                    A Modern Introduction to Programming" by Marijn Haverbeke</td>
+          </tr>
+          <tr>
+            <td>3. "JavaScript: The Good Parts" by Douglas Crockford</td>
+          </tr>
+          <tr>
+            <td>4. "Programming JavaScript Applications: 
+                    Robust Web Architecture with Node, HTML5, 
+                    and Moderns JS Libraries" by Eric Elliott</td>
+          </tr>
+          <tr>
+            <td>5. "Effective JavaScript: 
+                    68 Specific Ways to Harness the Power of JavaScript" 
+                    by David Herman</td>
+          </tr>
+          <tr>
+            <td>6. "JavaScript: The Definitive Guide" by David Flanagan</td>
+          </tr>
+          <tr>
+            <td>7. "You Don’t Know JS" by Kyle Simpson</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
+    <!-- Задание 8
+Создать html-страницу для отображения/редактирования текста.
+При открытии страницы текст отображается с помощью тега
+div. При нажатии Ctrl+E, вместо div появляется textarea с тем
+же текстом, который теперь можно редактировать. При нажатии
+Ctrl+S, вместо textarea появляет div с уже измененным текстом.
+Не забудьте выключить поведение по умолчанию для этих сочетаний клавиш. -->
+    <section class="exercise_8">
+      <div class="box">
+        <div id="view">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis facilis accusantium veritatis tempora voluptatibus beatae facere reiciendis ipsum in doloremque rem molestias officiis nihil, quaerat velit alias, nemo cum odio! <br>______tap_Ctrl+E______<br>______tap_Ctrl+S______</div>
+        <textarea id="area" autofocus></textarea>
+      </div>
+    </section>
+
+    <!-- Задание 9
+Создать html-страницу с большой таблицей.
+При клике по заголовку колонки, необходимо отсортировать
+данные по этой колонке. Например: на скриншоте люди отсортированы по возрасту. Учтите, что числовые значения должны
+сортироваться как числа, а не как строки. -->
+      <section class="exercise_9">
+        <div class="container_table">
+          <table class="table_9" id="table">
+            <thead >
+              <tr>
+                <th class="table_9" data-type="string">Firstname</th>
+                <th class="table_9" data-type="string">Lastname</th>
+                <th class="table_9" data-type="number">Age</th>
+                <th class="table_9" data-type="string">Company</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="table_9">Mark</td>
+                <td class="table_9">Zuckerberg</td>
+                <td class="table_9">34</td>
+                <td class="table_9">Facebook</td>
+              </tr>
+              <tr>
+                <td class="table_9">Larry</td>
+                <td class="table_9">Page</td>
+                <td class="table_9">45</td>
+                <td class="table_9">Google</td>
+              </tr>
+              <tr>
+                <td class="table_9">Timothy</td>
+                <td class="table_9">Cook</td>
+                <td class="table_9">57</td>
+                <td class="table_9">Apple</td>
+              </tr>
+              <tr>
+                <td class="table_9">Bill</td>
+                <td class="table_9">Gates</td>
+                <td class="table_9">62</td>
+                <td class="table_9">Microsoft</td>
+              </tr>
+            </tbody>
+          </table
+        </div>
       </section>
-
-    <script src="script.js"></script>
+      <script src="script.js"></script>
+      <script src="./dist/index.bundle.js"></script>
   </body>
 </html>
