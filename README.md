@@ -2,6 +2,8 @@
 
 [click here](https://akezhev.github.io/BROWSER_OBJECT_MODEL/)
 
+## JS_DZ_Module_4_1542971534 (33)
+
 ### Задание 1
 
 Создать html-страницу с трекбаром.
